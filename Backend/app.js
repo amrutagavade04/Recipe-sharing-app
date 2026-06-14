@@ -8,7 +8,7 @@ const cors = require("cors");
 const authRoutes = require("./Routes/UserRoute");
 const recipeRoutes = require("./Routes/RecipeRoute");
 const commentRoutes = require("./Routes/CommentRoute");
-const connectDB = require("./config/db");
+const connectDB = require("./Config/db");
 const app = express();
 
 
@@ -19,7 +19,7 @@ const port = process.env.PORT || 7005;
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-connectDB;
+connectDB();
 app.use("/uploads", express.static("uploads"));
 
 
