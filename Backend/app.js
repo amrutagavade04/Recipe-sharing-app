@@ -23,7 +23,9 @@ connectDB();
 app.use("/uploads", express.static("uploads"));
 
 
-
+app.get("/", (req, res) => {
+  res.send("Recipe Sharing API is running 🚀");
+});
 
 app.use("/api/user", authRoutes);
 app.use("/api/recipes", recipeRoutes);
