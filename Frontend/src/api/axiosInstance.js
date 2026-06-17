@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const axiosInstance = axios.create({
-  baseURL: "https://recipe-sharing-app-bqlp.onrender.com",
+  baseURL: "https://recipe-sharing-app-bqlp.onrender.com/api",
 });
 
 export default axiosInstance;
