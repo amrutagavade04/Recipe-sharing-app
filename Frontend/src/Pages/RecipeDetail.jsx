@@ -69,7 +69,7 @@ const RecipeDetail = () => {
           <div className="col-12 col-md-6">
             {recipe.image && (
               <img
-                src={`http://localhost:7005${recipe.image}`}
+                src={`https://recipe-sharing-app-bqlp.onrender.com/${recipe.image}`}
                 alt={recipe.title}
                 className="img-fluid w-100 h-100"
                 style={{ objectFit: "cover", minHeight: "300px" }}
