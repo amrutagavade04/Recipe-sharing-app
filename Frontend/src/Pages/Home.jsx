@@ -24,9 +24,10 @@ const Home = () => {
         className="col-12 col-sm-6 col-lg-4 mb-4"
       >
         <div className="card h-100 shadow-sm">
+          
           {recipe.image && (
             <img
-              src={`http://localhost:7005${recipe.image}`}
+              src={`https://recipe-sharing-app-bqlp.onrender.com${recipe.image}`}
               className="card-img-top"
               style={{
                 height: "200px",
