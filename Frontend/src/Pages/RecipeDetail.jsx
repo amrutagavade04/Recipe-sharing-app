@@ -54,11 +54,22 @@ const RecipeDetail = () => {
     try {
       await deleteRecipe(recipe._id, token);
       toast.success("🗑️ Recipe deleted");
-      navigate("/");
+      navigate("/home");
     } catch (error) {
       toast.error("❌ Delete failed");
     }
   };
+
+  useEffect(() => {
+  getRecipeById(id).then((res) => {
+    console.log(res.data);
+    console.log(res.data.image);
+
+    setRecipe(res.data);
+  });
+
+  getComments(id).then((res) => setComments(res.data));
+}, [id]);
 
   return (
     <div className="container my-4">
@@ -69,11 +80,14 @@ const RecipeDetail = () => {
           <div className="col-12 col-md-6">
             {recipe.image && (
               <img
-                src={`https://recipe-sharing-app-bqlp.onrender.com/${recipe.image}`}
-                alt={recipe.title}
-                className="img-fluid w-100 h-100"
-                style={{ objectFit: "cover", minHeight: "300px" }}
-              />
+  src={`https://recipe-sharing-app-bqlp.onrender.com${recipe.image}`}
+  alt={recipe.title}
+  className="img-fluid w-100 h-100"
+  style={{
+    objectFit: "cover",
+    minHeight: "300px",
+  }}
+/>
             )}
           </div>
 
